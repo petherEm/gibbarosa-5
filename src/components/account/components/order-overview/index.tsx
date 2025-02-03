@@ -4,7 +4,6 @@ import { Heading } from "@/components/common/components/heading";
 import { Text } from "@/components/common/components/text";
 import { BoxIcon } from "@/components/common/icons";
 import { Pagination } from "@/components/store/components/pagination";
-import { ORDERS_LIMIT } from "app/[countryCode]/(main)/account/@dashboard/orders/page";
 
 import OrderCard from "../order-card";
 
@@ -19,6 +18,7 @@ const OrderOverview = ({
   orders: OrderType[];
   page: string;
 }) => {
+  const ORDERS_LIMIT = 10;
   const totalPages = Math.ceil(orders.length / ORDERS_LIMIT);
   const pageNumber = page ? parseInt(page) : 1;
 
